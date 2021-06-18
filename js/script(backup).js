@@ -2,10 +2,13 @@ const weight = document.querySelectorAll(".weight");
 
 const pointBox = document.querySelectorAll(".point_box");
 
+// Fill Listeners
+// weight.addEventListener("dragstart", dragStart);
+// weight.addEventListener("dragend", dragEnd);
 
 for (const fill of weight) {
-  fill.addEventListener("dragstart", dragStart);
-  fill.addEventListener("dragend", dragEnd);
+  fill.addEventListener('dragstart', dragStart);
+  fill.addEventListener('dragend', dragEnd);
 }
 
 for (const empty of pointBox) {
@@ -19,7 +22,6 @@ for (const empty of pointBox) {
 let getWeight;
 let getWeightClassName;
 let getDropWeight;
-let getID;
 
 let rightValue = [];
 let leftValue = [];
@@ -31,15 +33,11 @@ function dragStart() {
   setTimeout(() => (this.className = "invisible"), 0);
   // console.log("hello"+this);
   getDropWeight = this;
-
-  if(){
-    
-  }
 }
 
 function dragEnd() {
   // this.className = "weight five_kg";
-  this.className = `${getWeightClassName} weight-drop`;
+  this.className = `${getWeightClassName}`;
   getDropWeight = this;
 }
 
@@ -57,44 +55,31 @@ function dragLeave() {
   this.classList.remove("hovered");
 }
 function dragDrop() {
-  getID = parseInt(this.id);
+  let getID =parseInt(this.id);
 
   this.className = "point_box hovered";
   this.append(getDropWeight);
-  calculation();
+  // console.log(weight);
+  
+  // if(getID === 0){
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(0deg)");
+  // }else if(getID> 0){
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(12deg)");
+  // }
+  // else{
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(-12deg)");
+  // }
+  // console.log(getID);
+  // if(getID == 0){
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(0deg)");
+  // }else if(getID > 0){
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(12deg)");
+  // }else{
+  //   document.getElementById("weight-point").setAttribute("style", "transform: rotate(-12deg)");
+  // }
+
+  // console.log("GET" + getWeight);
+
 }
 
-function calculation() {
-  if (getID > 0) {
-    rightValue.push(getWeight);
-  } else {
-    leftValue.push(getWeight);
-  }
-  let getLeftValue = getDuplicate(leftValue);
-  let getRightValue = getDuplicate(rightValue);
-  // console.log("LEFT " + getlastValue);
-  // console.log("RIGHT " + getlastValue1);
 
-  let rightSum = 0;
-
-  for (let i = 0; i < getRightValue.length; i++) {
-    let currentValue = parseInt(getRightValue[i]);
-    rightSum += currentValue;
-  }
-
-  let leftSum = 0;
-
-  for (let i = 0; i < getLeftValue.length; i++) {
-    let currentValue = parseInt(getLeftValue[i]);
-    leftSum += currentValue;
-  }
-  console.log("rightSum" + rightSum);
-  console.log("leftSum" + leftSum);
-  console.log("Get Id"+ getID);
-}
-
-function getDuplicate(data) {
-  return data.filter((vaule, index) => data.indexOf(vaule) == index);
-}
-
-// console.log(rightValue);
