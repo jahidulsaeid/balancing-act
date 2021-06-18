@@ -32,15 +32,13 @@ function dragStart() {
   // console.log("hello"+this);
   getDropWeight = this;
 
-  if(){
-    
-  }
 }
 
 function dragEnd() {
   // this.className = "weight five_kg";
   this.className = `${getWeightClassName} weight-drop`;
-  getDropWeight = this;
+  // getDropWeight = this;
+  
 }
 
 function dragOver(e) {
@@ -72,8 +70,8 @@ function calculation() {
   }
   let getLeftValue = getDuplicate(leftValue);
   let getRightValue = getDuplicate(rightValue);
-  // console.log("LEFT " + getlastValue);
-  // console.log("RIGHT " + getlastValue1);
+  // console.log("LEFT " + getLeftValue);
+  // console.log("RIGHT " + getRightValue);
 
   let rightSum = 0;
 
@@ -88,9 +86,17 @@ function calculation() {
     let currentValue = parseInt(getLeftValue[i]);
     leftSum += currentValue;
   }
-  console.log("rightSum" + rightSum);
-  console.log("leftSum" + leftSum);
-  console.log("Get Id"+ getID);
+  // console.log("rightSum" + rightSum);
+  // console.log("leftSum" + leftSum);
+  // console.log("Get Id"+ getID);
+  let checkValueIsGero = leftSum+rightSum;
+  if(rightSum > leftSum){
+    document.getElementById("weight-point").setAttribute("style", "transform: rotate(12deg)");
+  }else if(rightSum == leftSum){
+    document.getElementById("weight-point").setAttribute("style", "transform: rotate(0deg)");
+  }else{
+    document.getElementById("weight-point").setAttribute("style", "transform: rotate(-12deg)");
+  }
 }
 
 function getDuplicate(data) {
