@@ -7,8 +7,11 @@ Right 8 point is (+1 to +8)
 and Left 8 Point is (-1 to -8)
 
 
-`Sum  = Point*weight`
+`RightSum  = Point*weight`
 
+`LeftSum  = Point*weight`
+
+`Sum  = LeftSum + RightSum`
 
 if the Sum value is positive scale will be rotate +12deg
 
