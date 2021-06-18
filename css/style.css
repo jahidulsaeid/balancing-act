@@ -1,8 +1,121 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background: #8AD6F3;
+body {
+  background: #8ad6f3;
+  height: 80vh;
+}
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+/* WEIGHT ANGLE */
+.weight-point{
+    background: #F3CB7F;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 50%;
+    left: 15%;
+    display: grid; 
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.4);
+}
+.weight-angle{
+    height:120px;
+    position:absolute;
+    top: 25px;
+    left: 436px;
+}
+.point_box{
+    width: 50px;
+    height: 25px;
+    background: rgb(238, 10, 10);
+    /* border-left: 5px solid #333;
+    border-right: 5px solid #333; */
+    margin: auto;
+}
+
+/* WEIGHT BOX */
+.weight-box{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 112px;
+    float: right;
+    margin-top: 30px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 3%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    gap: 10px;
+}
+.five_kg{
+    background-image: url('../images/5kg.png');
+    background-repeat: no-repeat;
+    background-size: 45px;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+.ten_kg{
+    background-image: url('../images/10kg.png');
+    background-repeat: no-repeat;
+    background-size: 45px;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+.fifteen-kg{
+    background-image: url('../images/15kg.png');
+    background-repeat: no-repeat;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    background-size: 45px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.twinteen_kg{
+    background-image: url('../images/20kg.png');
+    background-repeat: no-repeat;
+    position: relative;
+    height: 50px;
+    background-size: 45px;
+    width: 50px;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.hold{
+    border: solid #ccc 4px;
+}
+
+.invisible{
+    display: none;
+}
+
+.hovered{
+    background: #f4f4f4;
+}
+
+.weight-drop{
+    /* position: absolute; */
+    /* top: -28px;
+    left: 0px; */
+    margin-top: -36px;
+    margin-left: -3px;
 }
